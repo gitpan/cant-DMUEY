@@ -8,8 +8,9 @@ my $builder = Module::Build->new(
     dist_author         => 'Daniel Muey <http://drmuey.com/cpan_contact.pl>',
     dist_version_from   => 'lib/cant.pm',
     requires => {
-        'Test::More' => 0,
-        'version'    => 0,
+        'Test::More'      => 0,
+        'version'         => 0,
+        'UNIVERSAL::cant' => 0,
     },
     add_to_cleanup      => [ 'cant-*' ],
 );

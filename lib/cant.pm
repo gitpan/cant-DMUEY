@@ -2,13 +2,9 @@ package cant;
 
 use strict;
 use warnings;
-use version;our $VERSION = qv('0.0.1');
+use version;our $VERSION = qv('0.0.2');
 
-sub UNIVERSAL::cant {
-	my ($pkg, @args) = @_;
-    return if $pkg->can( @args );
-    return 1;
-}
+use UNIVERSAL::cant;
 
 1;
 
@@ -16,36 +12,23 @@ __END__
 
 =head1 NAME
 
-cant - See if an object or package cant do something
+cant - Accidental existance, "alias" to UNIVERSAL::cant
 
 =head1 VERSION
 
-This document describes cant version 0.0.1
+This document describes cant version 0.0.2
 
 =head1 SYNOPSIS
 
     use cant;
 
-    ...
+simply does
 
-    if( $self->cant('dance') ) {
-	    $self->take_lessons('dance') or die "Loser can't dance";
-    }
-    else {
-	    $self->dance( { 'with' => 'Rhiannon'} );
-    }
+    use UNIVERSAL::cant;
 
-=head1 DESCRIPTION
+for you.
 
-Provides a UNIVERSAL method that is the opposite of can()
-
-=head1 INTERFACE 
-
-One simple method described below.
-
-=head2 cant()
-
-Takes the same arguments as can(), returns true if it can't do the specified args, returns false if it can
+This module exists because of a misname regarding UNIVERSAL::, so use <UNIVERSAL::cant> instead.
 
 =head1 DIAGNOSTICS
 
